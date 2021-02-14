@@ -2839,6 +2839,11 @@
   "resolved" "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz"
   "version" "1.0.0"
 
+"bootstrap@4.3.1":
+  "integrity" "sha512-rXqOmH1VilAt2DyPzluTi2blhk17bO7ef+zLLPlWvG494pDxcM234pJ8wTc/6R40UWizAIIMgxjvxZg5kmsbag=="
+  "resolved" "https://registry.npmjs.org/bootstrap/-/bootstrap-4.3.1.tgz"
+  "version" "4.3.1"
+
 "brace-expansion@^1.1.7":
   "integrity" "sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA=="
   "resolved" "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.11.tgz"
@@ -5263,6 +5268,11 @@
   "resolved" "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
 
+"fsevents@^1.2.7", "fsevents@^2.1.2", "fsevents@^2.1.3", "fsevents@~2.3.1":
+  "integrity" "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA=="
+  "resolved" "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
+  "version" "2.3.2"
+
 "function-bind@^1.1.1":
   "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
   "resolved" "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.1.tgz"
@@ -6741,6 +6751,11 @@
     "import-local" "^3.0.2"
     "jest-cli" "^26.6.0"
 
+"jquery@1.9.1 - 3":
+  "integrity" "sha512-XwIBPqcMn57FxfT+Go5pzySnm4KWkT1Tv7gjrpT1srtf8Weynl6R273VJ5GjkRb51IzMp5nbaPjJXMWeju2MKg=="
+  "resolved" "https://registry.npmjs.org/jquery/-/jquery-3.5.1.tgz"
+  "version" "3.5.1"
+
 "js-tokens@^3.0.0 || ^4.0.0", "js-tokens@^4.0.0":
   "integrity" "sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ=="
   "resolved" "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz"
@@ -8203,6 +8218,11 @@
   dependencies:
     "ts-pnp" "^1.1.6"
 
+"popper.js@^1.14.7":
+  "integrity" "sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ=="
+  "resolved" "https://registry.npmjs.org/popper.js/-/popper.js-1.16.1.tgz"
+  "version" "1.16.1"
+
 "portfinder@^1.0.26":
   "integrity" "sha512-Se+2isanIcEqf2XMHjyUKskczxbPH7dQnlMjXX6+dybayyHvAf/TCgyMRlzf/B6QDhAEFOGes0pzRo3by4AbMA=="
   "resolved" "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.28.tgz"
@@ -8917,11 +8937,6 @@
   "integrity" "sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw="
   "resolved" "https://registry.yarnpkg.com/prepend-http/-/prepend-http-1.0.4.tgz"
   "version" "1.0.4"
-
-"prettier@2.2.1":
-  "integrity" "sha512-PqyhM2yCjg/oKkFPtTGUojv7gnZAoG80ttl45O6x2Ug/rMJw4wcc9k6aaf2hibP7BGVCCM33gZoGjyvt9mm16Q=="
-  "resolved" "https://registry.npmjs.org/prettier/-/prettier-2.2.1.tgz"
-  "version" "2.2.1"
 
 "pretty-bytes@^5.3.0":
   "integrity" "sha512-p+T744ZyjjiaFlMUZZv6YPC5JrkNj8maRmPaQCWFJFplUAzpIUTRaTcS+7wmZtUoFXHtESJb23ISliaWyz3SHA=="
