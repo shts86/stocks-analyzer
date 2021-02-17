@@ -1,6 +1,6 @@
 import { FontAwesomeIcon as FA } from '@fortawesome/react-fontawesome';
 import { faFrown, faSmile } from '@fortawesome/free-solid-svg-icons';
-import './StockTable.css';
+import './stockTable.css';
 
 const StockTable = ({ data }) => {
   return (
@@ -21,7 +21,7 @@ const StockTable = ({ data }) => {
           <tr>
             <th>{data.startOfDay}</th>
             <td>{data.startOfDay}</td>
-            <td>{data.afterTwoOurs}</td>
+            <td>{data.checkpointTime}</td>
             <td>{data.endOfDay}</td>
           </tr>
           <tr>
@@ -34,10 +34,12 @@ const StockTable = ({ data }) => {
             <td>-</td>
             <td
               className={
-                data.afterTwoOursPercentage > 0 ? 'text-success' : 'text-danger'
+                data.checkpointTimePercentage > 0
+                  ? 'text-success'
+                  : 'text-danger'
               }
             >
-              {data.afterTwoOursPercentage}%
+              {data.checkpointTimePercentage}%
             </td>
             <td
               className={

@@ -1210,6 +1210,15 @@
     "minimatch" "^3.0.4"
     "strip-json-comments" "^3.1.1"
 
+"@forevolve/bootstrap-dark@^1.0.0-alpha.1091":
+  "integrity" "sha512-nclqiPd77TfSPfHfA/rTfJrsH2vpwybnCIOotw7iU7Nb43JzroQqBDHnTev6N64lS5lgNLqwoVe43DlX3n0fbQ=="
+  "resolved" "https://registry.npmjs.org/@forevolve/bootstrap-dark/-/bootstrap-dark-1.0.0-alpha.1091.tgz"
+  "version" "1.0.0-alpha.1091"
+  dependencies:
+    "bootstrap" "^4.5.0"
+    "jquery" "^3.5.1"
+    "popper.js" "^1.16.1"
+
 "@fortawesome/fontawesome-common-types@^0.2.34":
   "integrity" "sha512-XcIn3iYbTEzGIxD0/dY5+4f019jIcEIWBiHc3KrmK/ROahwxmZ/s+tdj97p/5K0klz4zZUiMfUlYP0ajhSJjmA=="
   "resolved" "https://registry.npmjs.org/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.34.tgz"
@@ -2871,6 +2880,11 @@
   "integrity" "sha1-aN/1++YMUes3cl6p4+0xDcwed24="
   "resolved" "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz"
   "version" "1.0.0"
+
+"bootstrap@^4.5.0":
+  "integrity" "sha512-Io55IuQY3kydzHtbGvQya3H+KorS/M9rSNyfCGCg9WZ4pyT/lCxIlpJgG1GXW/PswzC84Tr2fBYi+7+jFVQQBw=="
+  "resolved" "https://registry.npmjs.org/bootstrap/-/bootstrap-4.6.0.tgz"
+  "version" "4.6.0"
 
 "bootstrap@4.3.1":
   "integrity" "sha512-rXqOmH1VilAt2DyPzluTi2blhk17bO7ef+zLLPlWvG494pDxcM234pJ8wTc/6R40UWizAIIMgxjvxZg5kmsbag=="
@@ -6784,7 +6798,7 @@
     "import-local" "^3.0.2"
     "jest-cli" "^26.6.0"
 
-"jquery@1.9.1 - 3":
+"jquery@^3.5.1", "jquery@1.9.1 - 3":
   "integrity" "sha512-XwIBPqcMn57FxfT+Go5pzySnm4KWkT1Tv7gjrpT1srtf8Weynl6R273VJ5GjkRb51IzMp5nbaPjJXMWeju2MKg=="
   "resolved" "https://registry.npmjs.org/jquery/-/jquery-3.5.1.tgz"
   "version" "3.5.1"
@@ -8251,7 +8265,7 @@
   dependencies:
     "ts-pnp" "^1.1.6"
 
-"popper.js@^1.14.7":
+"popper.js@^1.14.7", "popper.js@^1.16.1":
   "integrity" "sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ=="
   "resolved" "https://registry.npmjs.org/popper.js/-/popper.js-1.16.1.tgz"
   "version" "1.16.1"
