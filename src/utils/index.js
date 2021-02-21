@@ -26,29 +26,35 @@ export const groupByDay = data => {
 export const analyzeStockData = (dataByDay, checkPoint) => {
   const checkpointTimeCheck = _(dataByDay)
     .map((dates, day) => {
-      const startOfDay = dates[0].open;
-      const checkpointTime = dates[checkPoint.time].close;
-      const endOfDay = dates[dates.length - 1].close;
-      const match =
-        (startOfDay < checkpointTime && checkpointTime < endOfDay) ||
-        (startOfDay > checkpointTime && checkpointTime > endOfDay)
-          ? true
-          : false;
-      const checkpointTimePercentage = percentage(startOfDay, checkpointTime);
-      const endOfDayPercentage = percentage(checkpointTime, endOfDay);
-      const matchPercent =
-        checkPoint.percent <= Math.abs(checkpointTimePercentage);
-      return {
-        day,
-        match,
-        matchPercent,
-        startOfDay,
-        checkpointTime,
-        endOfDay,
-        checkpointTimePercentage,
-        endOfDayPercentage,
-      };
+      try {
+        const startOfDay = dates[0].open;
+        const checkpointTime = dates[checkPoint.time].close;
+        const endOfDay = dates[dates.length - 1].close;
+        const match =
+          (startOfDay < checkpointTime && checkpointTime < endOfDay) ||
+          (startOfDay > checkpointTime && checkpointTime > endOfDay)
+            ? true
+            : false;
+        const checkpointTimePercentage = percentage(startOfDay, checkpointTime);
+        const endOfDayPercentage = percentage(checkpointTime, endOfDay);
+        const matchPercent =
+          checkPoint.percent <= Math.abs(checkpointTimePercentage);
+        return {
+          day,
+          match,
+          matchPercent,
+          startOfDay,
+          checkpointTime,
+          endOfDay,
+          checkpointTimePercentage,
+          endOfDayPercentage,
+        };
+      } catch {
+        console.warn(`[analyzeStockData] - one error happened on day ${day}`);
+        return false;
+      }
     })
+    .compact()
     .reverse()
     .value();
 

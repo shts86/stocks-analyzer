@@ -13,13 +13,14 @@ const checkPercent = (name, value) => {
 const StockPage = () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [currentStock, setCurrentStock] = useState('AAPL');
   const [originalData, setOriginalData] = useState([]);
   const [dataByDay, setDataByDay] = useState([]);
   const [analyticData, setAnalyticData] = useState([]);
   const [checkPoint, setCheckPoint] = useState({ time: 3, percent: '' });
 
   useEffect(() => {
-    getStockData('AAPL').then(
+    getStockData(currentStock).then(
       //apple
       result => {
         setIsLoaded(true);
@@ -33,7 +34,7 @@ const StockPage = () => {
         setError(error);
       }
     );
-  }, []);
+  }, [currentStock]);
 
   useEffect(() => {
     setDataByDay(groupByDay(originalData.values));
@@ -43,6 +44,11 @@ const StockPage = () => {
     setAnalyticData(analyzeStockData(dataByDay, checkPoint));
   }, [dataByDay, checkPoint]);
 
+  const handleStockSelect = event => {
+    event.preventDefault();
+    const { value } = event.target;
+    setCurrentStock(value);
+  };
   const handleCheckpointChange = event => {
     event.preventDefault();
     const { name, value } = event.target;
@@ -63,6 +69,8 @@ const StockPage = () => {
       <StockPageView
         checkPoint={checkPoint}
         analyticData={analyticData}
+        currentStock={currentStock}
+        handleStockSelect={handleStockSelect}
         handleCheckpointChange={handleCheckpointChange}
       />
     );
