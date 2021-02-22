@@ -1,10 +1,10 @@
 import './App.css';
-import StockPage from './components/StockPage';
+import Main from './components/Main';
 
 function App() {
   return (
-    <div className='container-fluid'>
-      <StockPage />
+    <div id='stock-app' className='container-fluid'>
+      <Main />
     </div>
   );
 }

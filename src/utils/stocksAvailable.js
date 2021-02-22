@@ -1,4 +1,4 @@
-export const stocksList = {
+export const stocksAvailable = {
   ZM: 'Zoom',
   NVDA: 'NVIDIA',
   TSLA: 'Tesla',
