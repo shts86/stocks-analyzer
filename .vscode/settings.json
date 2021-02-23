@@ -3,6 +3,7 @@
     "datetime",
     "fontawesome",
     "fortawesome",
-    "noreferrer"
+    "noreferrer",
+    "predeploy"
   ]
 }
