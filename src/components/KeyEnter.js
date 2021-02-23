@@ -31,7 +31,7 @@ const KeyEnter = ({ show, handleModalClose }) => {
       centered
     >
       <Modal.Header>
-        <Modal.Title>Welcome</Modal.Title>
+        <Modal.Title>Welcome to Stocks Analyzer</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         please enter API Key

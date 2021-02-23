@@ -21,9 +21,11 @@ const Summary = ({ data, title, stockCode }) => {
       <div>
         <span className='text-success mr-3'>Match: {totalMatch}</span>
         <span className='text-danger mr-3'>Not Match: {totalNotMatch}</span>
-        <span className='text-primary mr-3'>
-          {((totalMatch * 100) / totalDays).toFixed(0)}%
-        </span>
+        {totalDays !== 0 && (
+          <span className='text-primary mr-3'>
+            {((totalMatch * 100) / totalDays).toFixed(0)}%
+          </span>
+        )}
       </div>
     </div>
   );
