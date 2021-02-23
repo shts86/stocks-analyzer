@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Header from './common/Header';
 import Checkpoint from './common/Checkpoint';
 import StockPage from './StockPage';
 import StocksList from './StocksList';
+import KeyEnter from './KeyEnter';
+import { getApiKey } from '../api';
 
 const checkPercent = (name, value) => {
   const perNum = Number(value);
@@ -14,6 +16,15 @@ const checkPercent = (name, value) => {
 
 const Main = () => {
   const [checkPoint, setCheckPoint] = useState({ time: 3, percent: '' });
+  const [showModal, setShowModal] = useState(false);
+
+  const handleCloseModal = () => setShowModal(false);
+  const handleShowModal = () => setShowModal(true);
+
+  useEffect(() => {
+    const apiKey = getApiKey();
+    if (!apiKey) handleShowModal();
+  }, []);
 
   const handleCheckpointChange = event => {
     event.preventDefault();
@@ -49,6 +60,7 @@ const Main = () => {
           />
         </Switch>
       </div>
+      <KeyEnter show={showModal} handleModalClose={handleCloseModal} />
     </>
   );
 };

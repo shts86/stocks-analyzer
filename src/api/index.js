@@ -8,6 +8,7 @@ export const getAvailableStocks = () => stocksAvailable;
 
 export const getStockData = (stockCode, force) => {
   // apple - AAPL
+  const apiKey = getApiKey();
   const today = moment().format('YYYY-MM-DD');
   const lsName = `stock_${stockCode}_${today}`;
   const lsData = decompress(localStorage.getItem(lsName));
@@ -24,7 +25,7 @@ export const getStockData = (stockCode, force) => {
   }
 
   return fetch(
-    `https://api.twelvedata.com/time_series?symbol=${stockCode}&outputsize=2000&interval=30min&order=ASC&apikey=55e371945e7d48dbbc110c4182e326b0`
+    `https://api.twelvedata.com/time_series?symbol=${stockCode}&outputsize=2000&interval=30min&order=ASC&apikey=${apiKey}`
   ).then(res => {
     const promise = res.json();
     promise.then(data =>
@@ -39,4 +40,30 @@ export const getAllStocksData = () => {
     .filter(stock => stock[0].includes('stock_'))
     .map(item => [item[0], JSON.parse(decompress(item[1]))])
     .value();
+};
+
+export const getApiKey = () => {
+  return localStorage.getItem('twelve-data-api-key');
+};
+
+const setApiKey = apiKey => {
+  localStorage.setItem('twelve-data-api-key', apiKey);
+};
+
+export const checkApiIsValidAndSave = apiKey => {
+  return fetch(`https://api.twelvedata.com/api_usage?apikey=${apiKey}`)
+    .then(res => res.json())
+    .then(
+      result => {
+        if (result.code) {
+          throw result;
+        }
+        setApiKey(apiKey);
+        return result;
+      },
+      error => {
+        console.error(error);
+        return error;
+      }
+    );
 };

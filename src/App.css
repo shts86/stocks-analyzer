@@ -11,3 +11,7 @@ body {
 nav {
   padding: 20px 0 20px 0;
 }
+
+.api-key-modal.modal-backdrop.show {
+  opacity: 0.75;
+}
