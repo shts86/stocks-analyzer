@@ -2,7 +2,7 @@ import React from 'react';
 import './checkPoint.css';
 const Checkpoint = ({ checkPoint, handleCheckpointChange }) => {
   return (
-    <div className='st-checkpoint d-flex align-items-center'>
+    <div className='st-checkpoint d-flex align-items-center mb-3'>
       <span className='mr-3'>Select checkpoint</span>
       <select
         value={checkPoint.time}

@@ -2,3 +2,13 @@
   margin: 8px 0;
   font-size: 28px;
 }
+
+.sum-match {
+  min-width: 122px;
+}
+.sum-not-match {
+  min-width: 178px;
+}
+.sum-percent {
+  min-width: 70px;
+}
