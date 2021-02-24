@@ -15,7 +15,7 @@ const Summary = ({
   handleUpdate,
   isLoading,
 }) => {
-  const totalDays = data.length;
+  const totalDays = data?.length;
   const totalMatch = _.filter(data, 'match').length;
   const totalNotMatch = _.filter(data, ['match', false]).length;
   return (
@@ -24,40 +24,47 @@ const Summary = ({
         {title && (
           <h4>
             {!!stockCode ? (
-              <Link to={`/stock/${stockCode}`}>{title}</Link>
+              <>
+                <Link to={`/stock/${stockCode}`}>{title}</Link>{' '}
+                <small>({stockCode})</small>
+              </>
             ) : (
               title
             )}
           </h4>
         )}
-        <div>
-          <span className='text-success mr-3 d-inline-block sum-match'>
-            Match: {totalMatch}
-          </span>
-          <span className='text-danger mr-3 d-inline-block sum-not-match'>
-            Not Match: {totalNotMatch}
-          </span>
-
-          <span
-            className={
-              (totalDays === 0 ? 'invisible' : 'mr-3') +
-              ' text-primary d-inline-block sum-percent'
-            }
-          >
-            {((totalMatch * 100) / totalDays).toFixed(0)}%
-          </span>
-        </div>
-      </div>
-      {lastUpdate && (
-        <>
+        {lastUpdate && (
           <div>
-            <h4>
-              <small>Last Update</small>
-            </h4>
-            <div>
-              <small>{moment(lastUpdate).format('DD-MM-YYYY')}</small>
-            </div>
+            <span className='text-success mr-3 d-inline-block sum-match'>
+              Match: {totalMatch}
+            </span>
+            <span className='text-danger mr-3 d-inline-block sum-not-match'>
+              Not Match: {totalNotMatch}
+            </span>
+
+            <span
+              className={
+                (!totalDays ? 'invisible' : 'mr-3') +
+                ' text-primary d-inline-block sum-percent'
+              }
+            >
+              {((totalMatch * 100) / totalDays).toFixed(0)}%
+            </span>
           </div>
+        )}
+      </div>
+      {(lastUpdate || !totalDays) && (
+        <>
+          {lastUpdate && (
+            <div>
+              <h4>
+                <small>Last Update</small>
+              </h4>
+              <div>
+                <small>{moment(lastUpdate).format('DD-MM-YYYY')}</small>
+              </div>
+            </div>
+          )}
           <div
             className='d-flex align-items-center pl-3'
             role='button'

@@ -29,6 +29,7 @@ const StocksList = ({ checkPoint }) => {
   const [stockList, setStockList] = useState([]);
   const [listSummary, setListSummary] = useState([]);
   const [isLoadingObj, setIsLoadingObj] = useState({});
+  const [emptyStockData, setEmptyStockData] = useState([]);
 
   useEffect(() => {
     const allSavedStocks = loadAllStocks(checkPoint);
@@ -44,8 +45,16 @@ const StocksList = ({ checkPoint }) => {
       []
     );
 
+    const hasDataStocks = _.map(stockList, stock => stock.stockCode);
+    const emptyStocks = _(stocksAvailable)
+      .map((value, key) => key)
+      .filter(stockCode => !_.includes(hasDataStocks, stockCode))
+      .sort()
+      .value();
+
     setListSummary(summary);
-  }, [stockList]);
+    setEmptyStockData(emptyStocks);
+  }, [stockList, stocksAvailable]);
 
   const handleUpdateStock = stockCode => {
     const newIsLoading = { ...isLoadingObj, [stockCode]: true };
@@ -73,6 +82,17 @@ const StocksList = ({ checkPoint }) => {
             lastUpdate={stock.lastUpdate}
             handleUpdate={handleUpdateStock}
             isLoading={isLoadingObj[stock.stockCode]}
+          />
+          <hr></hr>
+        </Fragment>
+      ))}
+      {emptyStockData.map(_stockCode => (
+        <Fragment key={_stockCode}>
+          <Summery
+            title={stocksAvailable[_stockCode]}
+            stockCode={_stockCode}
+            handleUpdate={handleUpdateStock}
+            isLoading={isLoadingObj[_stockCode]}
           />
           <hr></hr>
         </Fragment>
