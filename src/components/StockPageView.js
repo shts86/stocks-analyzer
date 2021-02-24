@@ -23,7 +23,7 @@ const StockPageView = ({
         handleStockSelect={handleStockSelect}
       />
 
-      <Summery data={analyticData} />
+      <Summery data={analyticData} showMatchAnyway={true} />
 
       {_.map(analyticData, day => (
         <div key={day.day}>

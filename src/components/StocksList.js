@@ -70,7 +70,7 @@ const StocksList = ({ checkPoint }) => {
   return (
     <>
       <h2>Stocks List</h2>
-      <Summery data={listSummary} title='All' />
+      <Summery data={listSummary} showMatchAnyway={true} title='All' />
       <hr></hr>
       <br></br>
       {stockList.map(stock => (

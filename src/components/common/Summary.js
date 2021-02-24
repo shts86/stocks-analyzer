@@ -14,6 +14,7 @@ const Summary = ({
   lastUpdate,
   handleUpdate,
   isLoading,
+  showMatchAnyway,
 }) => {
   const totalDays = data?.length;
   const totalMatch = _.filter(data, 'match').length;
@@ -33,7 +34,7 @@ const Summary = ({
             )}
           </h4>
         )}
-        {lastUpdate && (
+        {(lastUpdate || showMatchAnyway) && (
           <div>
             <span className='text-success mr-3 d-inline-block sum-match'>
               Match: {totalMatch}
